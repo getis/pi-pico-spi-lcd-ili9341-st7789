@@ -47,6 +47,8 @@ def core1_thread():
         run_core_1 = False
 
 
+# Global variable to send signals between threads
 run_core_1 = False
+
 second_thread = _thread.start_new_thread(core1_thread, ())
 core0_thread()

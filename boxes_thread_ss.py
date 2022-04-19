@@ -68,8 +68,8 @@ class Box(object):
             self.y_speed = -self.y_speed
 
         # extra processing load
-        for num in range(1, 200):
-            num2 = math.sqrt(num)
+        # for num in range(1, 200):
+        #     num2 = math.sqrt(num)
 
     def draw(self):
         """Draw box."""
@@ -134,7 +134,7 @@ def main_loop():
     try:
 
         boxes = [Box(buffer_width - 1, buffer_height - 1, randint(7, 40),
-                     color565(randint(30, 256), randint(30, 256), randint(30, 256))) for i in range(10)]
+                     color565(randint(30, 256), randint(30, 256), randint(30, 256))) for i in range(100)]
 
         print(free(True))
 
@@ -186,6 +186,7 @@ def render_thread(id):
     render_frame = False
 
     # thread will exit and self clean removing need for garbage collection
+    return
 
 
 main_loop()

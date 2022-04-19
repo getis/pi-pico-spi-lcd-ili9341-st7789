@@ -23,4 +23,5 @@ def core1_thread():
 
 
 second_thread = _thread.start_new_thread(core1_thread, ())
+
 core0_thread()

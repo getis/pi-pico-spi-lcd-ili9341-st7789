@@ -7,12 +7,16 @@ from time import sleep
 import _thread
 
 
+
 def core0_thread():
     global lock
     while True:
         wait_counter = 0
         # try to acquire lock but don't wait
         while not lock.acquire(0):  # lock.acquire(waitflag=1, timeout=-1)
+            # count the number of times the lock is polled
+            # Our code is not in a waiting state
+            # we are just polling the lock at the end of each loop iteration
             wait_counter += 1
 
         print("CORE 0 - I counted to " + str(wait_counter) + " while waiting")
